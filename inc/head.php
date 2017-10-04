@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"
+session_start();
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" dir="ltr">
 <head>
@@ -8,6 +10,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="assets/styles.css" />
+<link rel="shortcut icon" type="image/x-ico" href="favicon.ico" />
 <body>
   <header>
     <!-- MENU ENTETE -->
@@ -22,7 +25,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/" >
+        <a class="navbar-brand" href="index.php" >
           <img class="pull-left" src="assets/img/cookie_funny_clipart.png" alt="The Cookies Factory logo">
           <h1>The Cookies Factory</h1>
         </a>
@@ -34,8 +37,9 @@
           <li><a href="#">Chocolates chips</a></li>
           <li><a href="#">Nuts</a></li>
           <li><a href="#">Gluten full</a></li>
+          <li><a href="logout.php"><span>Déconnexion</span></a></li>
           <li>
-            <a href="/cart.php" class="btn btn-warning navbar-btn">
+            <a href="cart.php" class="btn btn-warning navbar-btn">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
               Cart
             </a>
@@ -45,6 +49,7 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello Wilder !</strong>
+    <?php if(isset($_SESSION['loginname'])) {
+        echo '<strong>Hello ' . $_SESSION['loginname'] . '</strong>'; }?>
   </div>
 </header>

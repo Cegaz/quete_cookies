@@ -69,3 +69,7 @@ section.cookies{
     height: 60px;
   }
 }
+
+.img-responsive {
+    height: 100px;
+}
